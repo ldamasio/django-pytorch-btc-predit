@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Predictor</title>
+</head>
+<body>
+    <h1>Crypto Predictor</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="days">Number of Days for Prediction:</label>
+        <input type="number" id="days" name="days" min="1" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if predicted_price %}
+        <h2>Predicted Price: ${{ predicted_price }}</h2>
+    {% endif %}
+</body>
+</html>
